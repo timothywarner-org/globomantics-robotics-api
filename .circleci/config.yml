@@ -1,0 +1,22 @@
+version: 2.1
+
+jobs:
+  hello-world:
+    docker:
+      - image: cimg/base:current
+    steps:
+      - checkout
+      - run:
+          name: Say Hello
+          command: echo "Hello from Globomantics Robotics API!"
+      - run:
+          name: Show Environment
+          command: |
+            echo "Branch: $CIRCLE_BRANCH"
+            echo "Commit: $CIRCLE_SHA1"
+            echo "Build Number: $CIRCLE_BUILD_NUM"
+
+workflows:
+  welcome:
+    jobs:
+      - hello-world
