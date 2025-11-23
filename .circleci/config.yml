@@ -18,6 +18,12 @@ jobs:
           name: Install Dependencies
           command: npm ci
 
+      # Introduce an intentional error:
+      # This package does NOT exist in node_modules and will cause npx to fail.
+      - run:
+          name: Run Security Audit
+          command: npx audit-ci --moderate  # This package isn't installed
+
       # Save dependencies cache
       - save_cache:
           key: npm-cache-{{ checksum "package-lock.json" }}
