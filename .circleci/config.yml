@@ -1,22 +1,39 @@
 version: 2.1
 
 jobs:
-  hello-world:
+  build-and-test:
     docker:
-      - image: cimg/base:current
+      # Smallest stable Node image for CircleCI
+      - image: cimg/node:18.19
+    resource_class: small
+
     steps:
       - checkout
+
       - run:
-          name: Say Hello
-          command: echo "Hello from Globomantics Robotics API!"
+          name: Install Dependencies
+          command: npm ci
+
       - run:
-          name: Show Environment
-          command: |
-            echo "Branch: $CIRCLE_BRANCH"
-            echo "Commit: $CIRCLE_SHA1"
-            echo "Build Number: $CIRCLE_BUILD_NUM"
+          name: Run Tests
+          command: npm test
+
+      - run:
+          name: Build Application
+          command: npm run build
+
+      - store_test_results:
+          path: test-results
+
+      - store_artifacts:
+          path: coverage
+          destination: coverage-report
+
+      - store_artifacts:
+          path: dist
+          destination: build-output
 
 workflows:
-  welcome:
+  build:
     jobs:
-      - hello-world
+      - build-and-test
