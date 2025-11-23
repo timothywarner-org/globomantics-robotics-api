@@ -22,7 +22,7 @@ jobs:
       # This package does NOT exist in node_modules and will cause npx to fail.
       - run:
           name: Run Security Audit
-          command: npx audit-ci --moderate  # This package isn't installed
+          command: npx auditt-cci --fictitious-moderate  # This package isn't installed
 
       # Save dependencies cache
       - save_cache:
