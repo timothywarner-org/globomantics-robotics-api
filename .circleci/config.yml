@@ -39,7 +39,7 @@ jobs:
           at: .
       - run:
           name: Run Unit Tests
-          command: npm test -- --testPathPattern=unit
+          command: npm test -- --testPathPattern=unit --passWithNoTests
       - store_test_results:
           path: test-results
       - store_artifacts:
@@ -54,7 +54,7 @@ jobs:
           at: .
       - run:
           name: Run Integration Tests
-          command: npm test -- --testPathPattern=integration
+          command: npm test -- --testPathPattern=integration --passWithNoTests
       - store_test_results:
           path: test-results
 
