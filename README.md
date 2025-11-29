@@ -1,6 +1,6 @@
 # Globomantics Robotics Control API 🤖
 
-[![CircleCI](https://dl.circleci.com/status-badge/img/gh/timothywarner-org/globomantics-robotics-api/tree/main.svg?style=svg)](https://dl.circleci.com/pipelines/gh/timothywarner-org/globomantics-robotics-api?branch=main) [![Release](https://github.com/timothywarner-org/globomantics-robotics-api/actions/workflows/release.yml/badge.svg)](https://github.com/timothywarner-org/globomantics-robotics-api/actions/workflows/release.yml)
+[![CircleCI](https://circleci.com/gh/timothywarner-org/globomantics-robotics-api.svg?style=shield)](https://circleci.com/gh/timothywarner-org/globomantics-robotics-api) [![Release](https://github.com/timothywarner-org/globomantics-robotics-api/actions/workflows/release.yml/badge.svg?branch=main)](https://github.com/timothywarner-org/globomantics-robotics-api/actions/workflows/release.yml)
 
 > **Pluralsight Course Demo:** Master CircleCI pipelines with a real-world Node.js API
 
